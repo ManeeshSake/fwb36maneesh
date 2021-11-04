@@ -23,10 +23,10 @@ block content
                         "weight": "70"
                     },                   
                 ]
-            each t,h in table 
-                div(class="col-sm-2" onclick=`buy(${h})` ) #{t.Actor}
-                div(class="col-sm-2" ) #{t.age}
-                div(class="col-sm-2" ) #{t.weight}
+             each v,index in batman
+                div(class="col-sm-2" onclick=`buy(${index})` ) #{t.Actor}
+                div(class="col-sm-2" ) #{v.age}
+                div(class="col-sm-2" ) #{v.weight}
 
 
   script.
