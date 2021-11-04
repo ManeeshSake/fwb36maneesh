@@ -3,4 +3,15 @@ extends layout
 block content
   h1= title
   p Welcome to heroku server
-  button(type='button', class="btn btn-secondary") Press Me
+  button(type='button', class="btn btn-secondary"onclick='update()') Press Me
+   br
+  div(id='target') Display
+  br
+  br
+  a(href='/table') Search table page
+  script.
+    var client_count = 0;
+    function update(){
+      client_count++
+      document.getElementById("target").innerHTML = `Value now ${client_count}`;
+    }
