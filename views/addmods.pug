@@ -3,8 +3,8 @@ extends layout
 block content
   h1= title
     p rows:#{query.rows} , columns:#{query.cols}
-   var rows=Number(query.rows)
-  var cols=Number(query.cols)
+  - var rows=Number(query.rows)
+  - var cols=Number(query.cols)
   if !(Number.isInteger(rows)) ||  !(Number.isInteger(cols))
    p given parameter values are not integers 
   else if rows > 4
@@ -13,9 +13,9 @@ block content
    p cols value should be less than 4
   else
    table#outer
-     for(let i=0; i<4; i++) {
+    - for(let i=0; i<4; i++) {
      tr#middle
-       for(let j=0; j<4; j++) {
+      - for(let j=0; j<4; j++) {
        td=i+j
-      }
-    }
+      -}
+    -}
