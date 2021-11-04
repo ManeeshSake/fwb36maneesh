@@ -1,21 +1,24 @@
 extends layout
 
 block content
-  h1= title
-    p rows:#{query.rows} , columns:#{query.cols}
-  - var rows=Number(query.rows)
-  - var cols=Number(query.cols)
-  if !(Number.isInteger(rows)) ||  !(Number.isInteger(cols))
-   p given parameter values are not integers 
-  else if rows > 4
-   p rows value should be less than 4
-  else if cols > 4
-   p cols value should be less than 4
-  else
-   table#outer
-    - for(let i=0; i<4; i++) {
-     tr#middle
-      - for(let j=0; j<4; j++) {
-       td=i+j
-      -}
-    -}
+  h1= title 
+  p Rows = #{query.rows} and Columns = #{query.cols}
+    -
+        rows= Number(query.rows)
+        col= Number(query.cols)
+    if !Number.isInteger(rows)
+        p below mentioned rows are not accurate 
+    else if !Number.isInteger(col)
+        p below mentioned columns are not appropriate 
+    else if rows < 0 || rows > 5
+        p below mentioned rows are in one to four range 
+    else if col < 0 || col > 5
+        p below mentioned colums are in one to four range
+    else
+       table           
+            - for(let i=0; i<rows; i++) {
+               tr
+                 - for(let k=i; k<col+i; k++) {
+                     td= k 
+                 -}              
+            - }

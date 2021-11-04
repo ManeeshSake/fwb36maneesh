@@ -10,4 +10,4 @@ router.get('/', function(req, res, next) {
   res.render('addmods', { title: 'AddMods', query: query});
 });
 
-module.exports = router;s
+module.exports = router;

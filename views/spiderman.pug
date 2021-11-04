@@ -1,42 +1,38 @@
 extends layout
 
 block content
-  h1= title
-  
+  h1= title 
+  p Maneesh
   div(class="container-fluid")
         div(class="row")
             -
-                let spiderman  = [
+                let batman = [
                     {
-                        "Actor": "Happy Hogan",
-                        "age": "40",
-                        "weight": "90"                        
+                        "Actor": "maneesh",
+                        "age": 60,
+                        "color": "black"
                     },
                     {
-                        "Actor": "Peter Parker",
-                        "age": "50",
-                        "weight": "80"
+                        "Actor": "kiran",
+                        "age": 50,
+                        "color": "Black"
                     },
                     {
-                        "Actor": "Flash Thompson",
-                        "age": "62",
-                        "weight": "70"
+                        "Actor": "akhil",
+                        "age": 40,
+                        "color": "black"
                     },                   
                 ]
-             each v,index in batman
-                div(class="col-sm-2" onclick=`buy(${index})` ) #{t.Actor}
-                div(class="col-sm-2" ) #{v.age}
-                div(class="col-sm-2" ) #{v.weight}
-
-
-  script.
-     
-       function buy(a)
-       {
-         alert(`You purchased Item ${a+1}`)
-       }
-
- 
+            each v,index in batman 
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.Actor}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.age}
+                div(class="col-sm-2" onclick=`buy(${index})`) #{v.color}
+                
+  script.                
+        function buy(intemNo)
+        {
+              alert(`you purchased Item ${intemNo+1}`)
+        }   
 
                 
   
