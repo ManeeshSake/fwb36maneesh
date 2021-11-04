@@ -6,7 +6,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var spiderRouter = require('./routes/spiderman');
+var addModsRouter = require('./routes/addmods');
+var selectorRouter = require('./routes/selector');
 var app = express();
 
 // view engine setup
@@ -21,6 +23,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/spiderman', spiderRouter);
+app.use('/addmods', addModsRouter);
+app.use('/selector', selectorRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
